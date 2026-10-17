@@ -53,7 +53,7 @@ Para ejecutar el proyecto es necesario contar con:
 Clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone https://github.com/ProgDeveloperr/lafrancizka-reservas.git
 ```
 
 Ingresar a la carpeta del proyecto:
@@ -545,7 +545,7 @@ AGREGAR_LINK_DEL_VIDEO
 Repositorio de GitHub:
 
 ```text
-URL_DEL_REPOSITORIO
+https://github.com/ProgDeveloperr/lafrancizka-reservas
 ```
 
 ---
