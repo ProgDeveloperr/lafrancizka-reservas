@@ -1,0 +1,707 @@
+/* ENCABEZADO */
+
+.encabezado-reservas {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 34px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #d7d2c9;
+}
+
+.encabezado-reservas > div {
+    max-width: 720px;
+}
+
+.etiqueta-reservas {
+    display: block;
+    margin-bottom: 8px;
+    color: #9b713f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+
+/* FORMULARIO */
+
+.formulario-reserva {
+    max-width: 1000px;
+}
+
+.bloque-formulario {
+    margin-bottom: 26px;
+    padding: 28px 30px;
+    border: 1px solid #d9d4cb;
+    border-radius: 7px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgba(31, 44, 38, 0.04);
+}
+
+.bloque-titulo {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e5e1da;
+}
+
+.bloque-titulo > span {
+    padding-top: 3px;
+    color: #aa7e49;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.bloque-titulo h2 {
+    margin: 0 0 5px;
+    color: #20362d;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.bloque-titulo p {
+    margin: 0;
+    color: #777a75;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* CAMPOS */
+
+.campos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.campos-reserva {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-completo {
+    grid-column: 1 / -1;
+}
+
+.campo label {
+    margin-bottom: 7px;
+    color: #35423c;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #c8ccc8;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ffffff;
+    color: #2d332f;
+    font: inherit;
+    font-size: 14px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.campo input {
+    min-height: 43px;
+}
+
+.campo textarea {
+    resize: vertical;
+    line-height: 1.55;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #658474;
+    box-shadow: 0 0 0 3px rgba(49, 92, 74, 0.09);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #a4a8a4;
+}
+
+
+/* ERRORES */
+
+.mensaje-error {
+    display: block;
+    margin-top: 7px;
+    color: #a33d36;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.error-productos {
+    margin-top: 12px;
+}
+
+
+/* SELECCIÓN DE PRODUCTOS */
+
+.productos-seleccion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #dfdbd4;
+}
+
+.producto-seleccion {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 75px;
+    padding: 15px 18px;
+    border-bottom: 1px solid #dfdbd4;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.producto-seleccion:nth-child(odd) {
+    border-right: 1px solid #dfdbd4;
+}
+
+.producto-seleccion:hover {
+    background-color: #f8f7f3;
+}
+
+.producto-seleccion input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.producto-check {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #aeb7b2;
+    border-radius: 3px;
+    background-color: #ffffff;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.producto-seleccion input:checked + .producto-check {
+    border-color: #315c4a;
+    background-color: #315c4a;
+}
+
+.producto-seleccion input:checked + .producto-check::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 4px;
+    margin: 4px 0 0 4px;
+    border-bottom: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    transform: rotate(-45deg);
+}
+
+.producto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.producto-info strong {
+    color: #2b3933;
+    font-size: 14px;
+}
+
+.producto-info small {
+    color: #8b8e8a;
+    font-size: 11px;
+}
+
+.producto-valor {
+    color: #956d40;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ACCIONES */
+
+.acciones-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 24px 28px;
+    border-radius: 7px;
+    background-color: #e7e0d5;
+}
+
+.acciones-formulario > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.acciones-formulario strong {
+    color: #20362d;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.acciones-formulario span {
+    color: #727570;
+    font-size: 12px;
+}
+
+
+
+
+/* RESUMEN DE RESERVAS */
+
+.resumen-reservas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 24px;
+    padding: 18px 22px;
+    border: 1px solid #d9d4cb;
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+
+.resumen-reservas > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resumen-reservas span,
+.resumen-reservas p {
+    color: #747873;
+    font-size: 13px;
+}
+
+.resumen-reservas strong {
+    color: #20362d;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.resumen-reservas p {
+    margin: 0;
+}
+
+
+/* LISTADO */
+
+.lista-reservas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+
+/* TARJETA */
+
+.reserva-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #d9d4cb;
+    border-radius: 7px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 12px rgba(31, 44, 38, 0.04);
+}
+
+.reserva-cabecera {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 24px;
+    border-bottom: 1px solid #e3dfd8;
+}
+
+.reserva-numero {
+    display: block;
+    margin-bottom: 5px;
+    color: #9d7547;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.reserva-cabecera h2 {
+    margin: 0;
+    color: #20362d;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+}
+
+.reserva-fecha {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.reserva-fecha strong {
+    color: #35423c;
+    font-size: 13px;
+}
+
+.reserva-fecha span {
+    color: #8c8f8a;
+    font-size: 12px;
+}
+
+
+/* DATOS */
+
+.reserva-datos {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 0.55fr;
+    gap: 18px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e3dfd8;
+}
+
+.dato-reserva {
+    min-width: 0;
+}
+
+.dato-reserva span {
+    display: block;
+    margin-bottom: 5px;
+    color: #92958f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.dato-reserva strong {
+    display: block;
+    overflow: hidden;
+    color: #3c4540;
+    font-size: 12px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* OBSERVACIONES */
+
+.reserva-observaciones {
+    padding: 17px 24px;
+    border-bottom: 1px solid #e3dfd8;
+    background-color: #faf9f6;
+}
+
+.reserva-observaciones span {
+    display: block;
+    margin-bottom: 6px;
+    color: #92958f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}
+
+.reserva-observaciones p {
+    margin: 0;
+    color: #646964;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+
+/* PRODUCTOS DE LA RESERVA */
+
+.reserva-productos {
+    flex: 1;
+    padding: 20px 24px;
+}
+
+.productos-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.productos-titulo > span {
+    color: #35423c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.productos-titulo small {
+    color: #989b96;
+    font-size: 11px;
+}
+
+.productos-reserva-lista {
+    border-top: 1px solid #e3dfd8;
+}
+
+.producto-reserva-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e3dfd8;
+}
+
+.producto-reserva-item span {
+    color: #5d625e;
+    font-size: 12px;
+}
+
+.producto-reserva-item strong {
+    flex-shrink: 0;
+    color: #936b3e;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+
+/* ACCIONES */
+
+.reserva-acciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 24px;
+    background-color: #f7f5f0;
+}
+
+.reserva-acciones > span {
+    color: #979a95;
+    font-size: 11px;
+}
+
+.reserva-acciones form {
+    margin: 0;
+}
+
+.reserva-acciones .boton {
+    padding: 8px 13px;
+    font-size: 12px;
+}
+
+
+/* SIN RESERVAS */
+
+.reservas-vacias {
+    grid-column: 1 / -1;
+    padding: 55px 30px;
+    border: 1px solid #d9d4cb;
+    border-radius: 7px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.reservas-vacias h2 {
+    margin: 0 0 10px;
+    color: #20362d;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.reservas-vacias p {
+    margin: 0 0 22px;
+    color: #747873;
+    font-size: 14px;
+}
+
+
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .encabezado-reservas {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .campos-reserva {
+        grid-template-columns: 1fr;
+    }
+
+    .productos-seleccion {
+        grid-template-columns: 1fr;
+    }
+
+    .producto-seleccion:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .lista-reservas {
+    grid-template-columns: 1fr;
+}
+
+.resumen-reservas {
+    align-items: flex-start;
+    flex-direction: column;
+}
+}
+
+
+@media (max-width: 620px) {
+
+    .campos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .bloque-formulario {
+        padding: 23px 20px;
+    }
+
+    .acciones-formulario {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .acciones-formulario .boton {
+        text-align: center;
+    }
+
+    .reserva-cabecera {
+    flex-direction: column;
+}
+
+.reserva-fecha {
+    align-items: flex-start;
+}
+
+.reserva-datos {
+    grid-template-columns: 1fr;
+}
+
+.reserva-acciones {
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.reserva-acciones .boton {
+    width: 100%;
+}
+}
+
+
+/* =========================================================
+   PULIDO FINAL - RESERVAS
+   ========================================================= */
+
+/* FORMULARIO */
+
+.bloque-formulario {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.bloque-formulario:focus-within {
+    border-color: #c9b89e;
+    box-shadow: 0 6px 20px rgba(31, 44, 38, 0.055);
+}
+
+.campo input:hover,
+.campo textarea:hover {
+    border-color: #adb6b0;
+}
+
+
+/* PRODUCTOS */
+
+.producto-seleccion {
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease;
+}
+
+.producto-seleccion:hover {
+    background-color: #f6f5f1;
+}
+
+.producto-seleccion:has(input:checked) {
+    background-color: #f0f5f2;
+}
+
+.producto-seleccion:has(input:checked) .producto-info strong {
+    color: #244d3d;
+}
+
+
+/* LISTADO */
+
+.reserva-card {
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.reserva-card:hover {
+    border-color: #cfc8bc;
+    box-shadow: 0 7px 22px rgba(31, 44, 38, 0.075);
+    transform: translateY(-1px);
+}
+
+.reserva-fecha {
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: #f7f4ed;
+}
+
+.producto-reserva-item:last-child {
+    border-bottom: 0;
+}
+
+.reserva-acciones {
+    border-top: 1px solid rgba(217, 212, 203, 0.45);
+}
+
+.resumen-reservas {
+    box-shadow: 0 2px 9px rgba(31, 44, 38, 0.035);
+}
+
+
+/* ERROR */
+
+.mensaje-error {
+    font-weight: 500;
+}
