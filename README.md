@@ -59,7 +59,7 @@ git clone https://github.com/ProgDeveloperr/lafrancizka-reservas.git
 Ingresar a la carpeta del proyecto:
 
 ```bash
-cd restaurante-reservas
+cd lafrancizka-reservas
 ```
 
 ### 2. Instalar las dependencias
@@ -532,11 +532,9 @@ Muestra:
 
 ## Video demostrativo
 
-
 Link al video:
 
 https://drive.google.com/file/d/1sy6INwFDpLn3ep9bzWShUkX2nEOOJ_v4/view?usp=drive_link
-```
 
 ---
 
